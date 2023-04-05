@@ -1,7 +1,17 @@
 {
   "name": "unplugin-graphql-parse",
   "version": "0.0.0",
+  "repository": "git@github.com:gympass/unplugins.git",
+  "author": "Kaic Bastidas <kaic.bastidas@gympass.com>",
   "license": "MIT",
+  "keywords": [
+    "graphql",
+    "unplugin",
+    "esbuild",
+    "vite",
+    "webpack",
+    "rollup"
+  ],
   "type": "module",
   "exports": {
     "./*": "./*",
@@ -39,9 +49,6 @@
     "build": "node ../../build.js",
     "dev": "node ../../build.js -w",
     "types": "tsc -p tsconfig.build.json"
-  },
-  "publishConfig": {
-    "registry": "https://registry.us.gympass.cloud/repository/npm-hosted"
   },
   "dependencies": {
     "graphql": "^16.6.0",
