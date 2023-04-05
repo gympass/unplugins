@@ -30,6 +30,12 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
+      - name: Test
+        run: pnpm test
+
+      - name: Lint
+        run: pnpm eslint .
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
