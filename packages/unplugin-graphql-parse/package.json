@@ -1,6 +1,6 @@
 {
   "name": "unplugin-graphql-parse",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "repository": "git@github.com:gympass/unplugins.git",
   "author": "Kaic Bastidas <kaic.bastidas@gympass.com>",
   "license": "MIT",
@@ -41,7 +41,9 @@
       "import": "./dist/esm/esbuild.mjs"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
