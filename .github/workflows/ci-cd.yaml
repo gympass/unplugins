@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
   release:
     name: Release
@@ -13,33 +17,26 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - name: Setup Node.js 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        run: yarn
-
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            registry=https://registry.us.gympass.cloud/repository/npm-group/
-
-            @gympass:registry=https://registry.us.gympass.cloud/repository/npm-hosted/
-            //registry.us.gympass.cloud/repository/npm-hosted/:username=$NEXUS_USER
-            //registry.us.gympass.cloud/repository/npm-hosted/:_password=$(echo -n $NEXUS_PASS | base64)
-          EOF
-        env:
-          NEXUS_USER: ${{ secrets.NEXUS_USER }}
-          NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
+        run: pnpm i
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: yarn release
+          publish: pnpm release
           commit: "chore: release new version"
           title: "chore: release new version"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -8,9 +8,9 @@
   ],
   "type": "module",
   "scripts": {
-    "types": "pnpm m run types",
-    "build": "pnpm m run build",
-    "release": "pnpm types && pnpm build && pnpm changeset publish",
+    "types": "pnpm run -r types",
+    "build": "pnpm run -r build",
+    "release": "pnpm types && pnpm build && pnpm publish -r",
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "web": "pnpm --filter vite-app dev"
