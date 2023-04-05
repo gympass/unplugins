@@ -1,0 +1,20 @@
+{
+  "name": "@gympass/unplugin-graphql-parse",
+  "version": "1.4.1",
+  "license": "MIT",
+  "type": "module",
+  "types": "dist/types/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.us.gympass.cloud/repository/npm-hosted"
+  },
+  "scripts": {
+    "build": "node ../../build.js",
+    "dev": "node ../../build.js -w",
+    "types": "tsc -p tsconfig.build.json"
+  }
+}

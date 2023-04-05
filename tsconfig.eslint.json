@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "include": [
+    "clients/**/*",
+    "packages/**/*",
+    ".*.cjs",
+    "*.config.cjs",
+    "*.config.ts",
+    "build.js",
+  ]
+}
