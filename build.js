@@ -1,14 +1,25 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { build } from 'esbuild';
-import glob from 'tiny-glob';
+import { build, context } from 'esbuild';
 
 const args = process.argv.slice(2);
 const watch = args.includes('-w');
 
+const entryPoints = [
+  'src/esbuild.ts',
+  'src/index.ts',
+  'src/rollup.ts',
+  'src/rspack.ts',
+  'src/vite.ts',
+  'src/webpack.ts',
+];
+
 const commonOptions = {
-  entryPoints: await glob('src/**/!(*.test).*'),
+  entryPoints,
 
   logLevel: 'info',
+
+  bundle: true,
+  packages: 'external',
 
   minify: true,
   treeShaking: true,
@@ -17,20 +28,30 @@ const commonOptions = {
   sourcesContent: false,
 };
 
-// Only build CJS if not on watch mode.
-if (!watch)
-  await build({
-    ...commonOptions,
-    outdir: 'dist/cjs',
+const cjsOptions = {
+  ...commonOptions,
 
-    format: 'cjs',
-    keepNames: true,
-  });
+  outdir: 'dist/cjs',
+  outExtension: { '.js': '.cjs' },
+
+  format: 'cjs',
+  keepNames: true,
+};
+
+const esmOptions = {
+  ...commonOptions,
+
+  outdir: 'dist/esm',
+  outExtension: { '.js': '.mjs' },
+
+  format: 'esm',
+};
 
 // Only watch the ESM module for simplicity.
-await build({
-  ...commonOptions,
-  outdir: 'dist/esm',
-
-  watch,
-});
+if (watch) {
+  const ctx = await context(esmOptions);
+  await ctx.watch();
+} else {
+  await build(esmOptions);
+  await build(cjsOptions);
+}
