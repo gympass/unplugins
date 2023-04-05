@@ -41,6 +41,8 @@ const cjsOptions = {
 const esmOptions = {
   ...commonOptions,
 
+  splitting: true,
+
   outdir: 'dist/esm',
   outExtension: { '.js': '.mjs' },
 

@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`should parse graphql sdls 1`] = `
+"const schema = {\\"kind\\":\\"Document\\",\\"definitions\\":[{\\"kind\\":\\"ObjectTypeDefinition\\",\\"name\\":{\\"kind\\":\\"Name\\",\\"value\\":\\"MyType\\",\\"loc\\":{\\"start\\":10,\\"end\\":16}},\\"interfaces\\":[],\\"directives\\":[],\\"fields\\":[{\\"kind\\":\\"FieldDefinition\\",\\"name\\":{\\"kind\\":\\"Name\\",\\"value\\":\\"id\\",\\"loc\\":{\\"start\\":25,\\"end\\":27}},\\"arguments\\":[],\\"type\\":{\\"kind\\":\\"NamedType\\",\\"name\\":{\\"kind\\":\\"Name\\",\\"value\\":\\"ID\\",\\"loc\\":{\\"start\\":29,\\"end\\":31}},\\"loc\\":{\\"start\\":29,\\"end\\":31}},\\"directives\\":[],\\"loc\\":{\\"start\\":25,\\"end\\":31}}],\\"loc\\":{\\"start\\":5,\\"end\\":37}}],\\"loc\\":{\\"start\\":0,\\"end\\":40}};
+export default schema;
+"
+`;

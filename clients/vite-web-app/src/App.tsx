@@ -2,6 +2,8 @@
 // @ts-ignore
 import test from './test.graphql';
 
+console.log(test);
+
 const App = () => {
   return (
     <div className="App">
