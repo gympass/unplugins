@@ -1,8 +1,7 @@
 # `unplugin-graphql-parse`
 
-Parse GraphQL SDL files to DocumentNode AST objects. This is usefull for passing it to Graphql Servers, for example.
+Parse GraphQL SDL files to DocumentNode AST objects. This is useful for passing it to Graphql Servers, for example.
 
----
 
 ```ts
 import sdl from 'Schema.graphql';
@@ -16,7 +15,11 @@ console.log(sdl);
 */
 ```
 
----
+## Options
+
+- `ext` (default: `.graphql`): With file extension should the plugin parse.
+
+## Usage
 
 <details>
 <summary>Vite</summary></br>
@@ -83,8 +86,6 @@ build({
 ```
 
 <br></details>
-
----
 
 ## Types
 
