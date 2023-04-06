@@ -1,6 +1,6 @@
 import { parse } from 'graphql';
 
-import type { Options } from './options';
+import type { Options } from './options.js';
 
 export function transform(code: string) {
   const schema = JSON.stringify(parse(code));

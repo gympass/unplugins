@@ -14,5 +14,16 @@
     "strict": true,
 
     "jsx": "react",
+    "module": "NodeNext",
+
+    "allowJs": true,
+
+    // For testing purposes
+    "baseUrl": "src",
+    "paths": {
+      "@test/*": [
+        "test/*"
+      ],
+    },
   },
 }
