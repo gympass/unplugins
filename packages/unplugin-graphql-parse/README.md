@@ -17,7 +17,7 @@ console.log(sdl);
 
 ## Options
 
-- `ext` (default: `.graphql`): With file extension should the plugin parse.
+- `ext` (default: `.graphql`): Which file extension should the plugin match.
 
 ## Usage
 
