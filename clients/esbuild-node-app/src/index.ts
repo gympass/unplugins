@@ -6,7 +6,7 @@ import resolvers from 'glob:./resolvers/**/*';
 
 import typeDefsTest from './graphql/schema.gql';
 
-import { config } from './config';
+import { config } from './reexport';
 
 console.log({ typeDefs, resolvers, typeDefsTest });
 
