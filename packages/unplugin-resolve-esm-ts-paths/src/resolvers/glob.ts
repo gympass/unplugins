@@ -17,7 +17,6 @@ export async function resolveGlob(
     filesOnly: true,
   });
 
-  // console.log({ files });
   const selfPath = relative(dir, id);
   const filteredFiles = files.filter(f => f !== selfPath);
 

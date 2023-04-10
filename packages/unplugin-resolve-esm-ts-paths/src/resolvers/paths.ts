@@ -8,8 +8,6 @@ const tsconfig = getTsconfig();
 if (!tsconfig) throw new Error('No tsconfig found');
 const pathsMatcher = createPathsMatcher(tsconfig);
 
-// console.log({ tsconfig });
-
 const require = createRequire(`file://${process.cwd()}/`);
 
 export async function resolvePaths(
@@ -36,8 +34,6 @@ export async function resolvePaths(
      */
     if (!pathsMatcher) throw new Error('No paths declared');
     const [resolvedFile] = pathsMatcher(file);
-
-    // console.log({ resolvedFile });
 
     const relativePath = relative(dir, resolvedFile);
 
