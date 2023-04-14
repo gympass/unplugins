@@ -16,8 +16,17 @@ export function escapePathForRegExp(path: string) {
 }
 
 export function removeExt(path: string) {
+  let pathWithoutDots = path;
+  if (path.includes('..')) {
+    const parts = path.split('..');
+    pathWithoutDots = parts[parts.length - 1];
+  }
+
   // https://stackoverflow.com/a/12900504/4223135
-  // eslint-disable-next-line no-bitwise
-  const ext = path.slice(((path.lastIndexOf('.') - 1) >>> 0) + 2);
+  const ext = pathWithoutDots.slice(
+    // eslint-disable-next-line no-bitwise
+    ((pathWithoutDots.lastIndexOf('.') - 1) >>> 0) + 2,
+  );
+
   return path.replace(new RegExp(`\\.${ext}$`), '');
 }
