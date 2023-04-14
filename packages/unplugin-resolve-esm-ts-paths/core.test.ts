@@ -6,7 +6,11 @@ const code = `
   import doubleQ from "./doubleQ";
   import { build } from 'esbuild'
   import item from '@test/file'
-  import glob from 'glob:./*.md'
+  import glob from 'glob:../*.md'
+
+  import {
+    multiLine,
+  } from "@test/file";
 `;
 
 it('should accept the incomming ext', () => {
@@ -15,7 +19,7 @@ it('should accept the incomming ext', () => {
 });
 
 it('should resolve imports', async () => {
-  const r = await transform(code, 'foo.ts', {
+  const r = await transform(code, 'clients/foo.ts', {
     ext: '.ts',
     resolveGlob: true,
     resolvedExt: '.js',
