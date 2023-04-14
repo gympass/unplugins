@@ -1,4 +1,4 @@
-import { transform, transformInclude } from './src/core';
+import { transform, transformInclude } from './src/core.js';
 
 it('should accept the incomming ext', () => {
   expect(transformInclude('foo.graphql', { ext: '.graphql' })).toBe(true);

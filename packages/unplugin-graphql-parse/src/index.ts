@@ -1,16 +1,20 @@
 import { createUnplugin } from 'unplugin';
 
-import type { Options } from './options';
-import { transform, transformInclude } from './core';
+import type { Options } from './options.js';
+import { transform, transformInclude } from './core.js';
 
 const defaults: Options = { ext: '.graphql' };
 
 const unpluginGraphQLParser = createUnplugin<Options | undefined>(
-  (options = defaults) => ({
-    name: 'unplugin-graphql-parser',
-    transformInclude: id => transformInclude(id, options),
-    transform,
-  }),
+  (options = defaults) => {
+    const mergedDefaults = { ...defaults, ...options };
+
+    return {
+      name: 'unplugin-graphql-parser',
+      transformInclude: id => transformInclude(id, mergedDefaults),
+      transform,
+    };
+  },
 );
 
 export default unpluginGraphQLParser;

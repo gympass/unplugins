@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    // ESBuild recommended.
+    "isolatedModules": true,
+    "esModuleInterop": true,
+
+    // We only use TSC for type checking.
+    "noEmit": true,
+    "outDir": "build",
+
+    "baseUrl": "src",
+    "paths": {
+      "@graphql/*": ["graphql/*"],
+    },
+    "strict": true,
+    "importsNotUsedAsValues": "error"
+  },
+  "include": [
+    "**/*",
+  ],
+  "exclude": [
+    "coverage",
+    "build"
+  ],
+}

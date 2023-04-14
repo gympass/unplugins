@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`should resolve imports 1`] = `
+"
+  import foo from './foo.js';
+  import doubleQ from './doubleQ.js';
+  import { build } from 'esbuild'
+  import item from './src/test/file.js'
+  
+    import module0 from './README.js'
+    const glob = [module0]
+  
+"
+`;

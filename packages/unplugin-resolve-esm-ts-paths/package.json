@@ -1,0 +1,64 @@
+{
+  "name": "unplugin-resolve-esm-ts-paths",
+  "version": "0.0.0",
+  "repository": "git@github.com:gympass/unplugins.git",
+  "author": "Kaic Bastidas <kaic.bastidas@gympass.com>",
+  "license": "MIT",
+  "keywords": [
+    "imports",
+    "paths",
+    "esm",
+    "ts",
+    "unplugin",
+    "esbuild",
+    "vite",
+    "webpack",
+    "rollup"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": "./*",
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.mjs"
+    },
+    "./rollup": {
+      "types": "./dist/types/rollup.d.ts",
+      "require": "./dist/cjs/rollup.cjs",
+      "import": "./dist/esm/rollup.mjs"
+    },
+    "./vite": {
+      "types": "./dist/types/vite.d.ts",
+      "require": "./dist/cjs/vite.cjs",
+      "import": "./dist/esm/vite.mjs"
+    },
+    "./webpack": {
+      "types": "./dist/types/webpack.d.ts",
+      "require": "./dist/cjs/webpack.cjs",
+      "import": "./dist/esm/webpack.mjs"
+    },
+    "./esbuild": {
+      "types": "./dist/types/esbuild.d.ts",
+      "require": "./dist/cjs/esbuild.cjs",
+      "import": "./dist/esm/esbuild.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "node ../../build.js",
+    "dev": "node ../../build.js -w",
+    "types": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "es-module-lexer": "^1.2.1",
+    "get-tsconfig": "^4.5.0",
+    "tiny-glob": "^0.2.9",
+    "unplugin": "^1.3.1"
+  }
+}
