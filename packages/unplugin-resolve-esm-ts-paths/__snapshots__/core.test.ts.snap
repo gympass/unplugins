@@ -7,8 +7,9 @@ exports[`should resolve imports 1`] = `
   import { build } from 'esbuild'
   import item from './src/test/file.js'
   
-    import module0 from './README.js'
-    const glob = [module0]
+    import module0 from './LICENSE.js'
+import module1 from './README.js'
+    const glob = [module0, module1]
   
 "
 `;
