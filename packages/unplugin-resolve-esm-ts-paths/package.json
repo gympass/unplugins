@@ -5,7 +5,10 @@
   "author": "Kaic Bastidas <kaic.bastidas@gympass.com>",
   "license": "MIT",
   "keywords": [
-    "graphql",
+    "imports",
+    "paths",
+    "esm",
+    "ts",
     "unplugin",
     "esbuild",
     "vite",
