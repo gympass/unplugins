@@ -24,7 +24,7 @@
     "@react-native-community/eslint-config": "^3.2.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "esbuild": "^0.17.15",
+    "esbuild": "^0.25.0",
     "eslint": "^8.37.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
